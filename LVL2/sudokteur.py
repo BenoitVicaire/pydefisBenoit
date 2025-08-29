@@ -77,11 +77,7 @@ for i in range(len(list_digit)):
 for numero_in_grid in range(len(grille)):
     for digit in range(len(list_digit)):
         if grille[numero_in_grid]==list_digit[digit]:
-            # on veux incrementer la valeur [1] du tuple correspondant au digit, dans la liste. Il faut d'abord convertir mon tuple en liste, puis incrementer, puis reconvertir en tuple
-            # y = list(list_of_tuple_digit_count)
-            # list_of_tuple_digit_count[digit][1]=list_of_tuple_digit_count[digit][1]+1
+            # on veux incrementer la valeur [1] du tuple correspondant au digit, dans la liste. 
 
-            dict_digit_count[digit]=+1
+            dict_digit_count[digit]+=1
 print(dict_digit_count)
-        
-    
