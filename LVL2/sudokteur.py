@@ -81,3 +81,6 @@ for numero_in_grid in range(len(grille)):
 
             dict_digit_count[digit]+=1
 print(dict_digit_count)
+sorted_dict=sorted(dict_digit_count.items(), key=lambda x: x[1])
+print(sorted_dict)
+
