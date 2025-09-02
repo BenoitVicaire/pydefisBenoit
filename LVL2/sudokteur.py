@@ -73,14 +73,36 @@ for i in range(len(list_digit)):
 # y[1][1]=+1
 # print(y[1][1])
 
-
+dotcount = 0
 for numero_in_grid in range(len(grille)):
-    for digit in range(len(list_digit)):
-        if grille[numero_in_grid]==list_digit[digit]:
-            # on veux incrementer la valeur [1] du tuple correspondant au digit, dans la liste. 
-
-            dict_digit_count[digit]+=1
-print(dict_digit_count)
+    if grille[numero_in_grid]==".":
+            dotcount+=1
+    else:
+        for digit in range(len(list_digit)):
+            if grille[numero_in_grid]==list_digit[digit]:
+                # on veux incrementer la valeur [1] du tuple correspondant au digit, dans la liste. 
+                dict_digit_count[digit]+=1
+        
+# print(dotcount)
+# print(dict_digit_count)
 sorted_dict=sorted(dict_digit_count.items(), key=lambda x: x[1])
-print(sorted_dict)
+# print(sorted_dict[-1][1])
+
+# on calcule le nombre de chiffre manquant : 
+dict_digit_manquant={}
+max_count = sorted_dict[-1][1] 
+for x in range(len(sorted_dict)):
+    digit = sorted_dict[x][0]
+    count = sorted_dict[x][1]
+    dict_digit_manquant[digit] = max_count - count
+
+sorted_manquant=sorted(dict_digit_manquant.items(),key=lambda x: x[0])
+print(sorted_manquant)
+
+answer=""
+for digit in range (len(sorted_manquant)):
+    for i in range (sorted_manquant[digit][1]):   
+        answer+=""+str(sorted_manquant[digit][0])
+
+print(answer)
 
