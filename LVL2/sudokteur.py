@@ -78,8 +78,10 @@ for numero_in_grid in range(len(grille)):
     if grille[numero_in_grid]==".":
             dotcount+=1
     else:
-        for digit in range(len(list_digit)):
-            if grille[numero_in_grid]==list_digit[digit]:
+        #for index in range(len(list_digit)):
+        for digit in list_digit:
+            #digit = list_digit[index]
+            if grille[numero_in_grid]==digit:
                 # on veux incrementer la valeur [1] du tuple correspondant au digit, dans la liste. 
                 dict_digit_count[digit]+=1
         
