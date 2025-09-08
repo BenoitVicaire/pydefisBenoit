@@ -20,6 +20,8 @@ OagxXGeEAoOpPtTntTNnNKjtTxXwWgGJunjJdDoONUspPSutTtgGTUhH
 qlLrRQmuUjJnwfFWNxXpzZPyYlLzZMoOnweEfFWkwpPjJWnNxXKyYjJy
 YfFuUicbBCcCpuUoOPoeEoOsgwWsaAsSSjJGkKeEnNSpPvVsmyYMoOsS
 SOxXdyqQzZmMmMYnNDd"""
+message=message.replace(" ","")
+message=message.replace("\n","")
 # print(type(message))
 # stop_boucle=False
 # while not stop_boucle:
@@ -28,8 +30,8 @@ SOxXdyqQzZmMmMYnNDd"""
 #             message.pop(i),message.pop(i+1)
 
 decrypted_message=[]
-for i, letter in enumerate(message):
-    if letter.isupper() and i>0 and letter.lower()==message[i-1]:
+for i, letter in enumerate(message, start=0):
+    if letter.isupper() and i>0 and letter.lower()==decrypted_message[len(decrypted_message)-1]:
         decrypted_message.pop()
     else:
         decrypted_message.append(letter)

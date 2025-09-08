@@ -29,3 +29,6 @@ solution=""
 for i in range (len(list_word_value)):
     solution=solution+" " +list_word_value[i][0]
 print(solution)
+
+print(ord("B")-ord("A"))
+print(chr(65+19))
