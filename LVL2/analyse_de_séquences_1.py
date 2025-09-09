@@ -1,4 +1,4 @@
-data_raw="ACDMR"
+data_raw="NDNKCNVNUGYWRGCNABGSNCRACGSHWNNCYBCSNVUAAGDCMNKNYNNBNCGUBHUNRANDGDMDRSYMGSNWHNDNCVCMAMCANWKYRKVMWMKC"
 arn_possible=""
 list_arn_possible=[]
 
@@ -85,8 +85,10 @@ dict_symbole ={
     "V":[3],
     "N":[4]
 }
-combinaison=0
-for letter in data_raw:
-    combinaison*=dict_symbole[letter]
 
-print(combinaison)
+
+combinaison=1
+for letter in data_raw:
+    combinaison*=dict_symbole[letter][0]
+result=combinaison%100000
+print(result)
