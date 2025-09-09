@@ -207,7 +207,8 @@ processed_data=processed_data.split("\n")
 list_relevé: list = []
 for element in processed_data:
     temp=element.split("-")
-    temp_tuple=(temp[0],temp[1])
+    valeurs = [float(x) for x in temp[1].split(",")]
+    temp_tuple=(temp[0],valeurs)
     list_relevé.append(temp_tuple)
 # print(list_relevé[0][1])
 
@@ -218,13 +219,23 @@ def verification_dentaire(liste):
     liste=np.array(liste)
     def verif_intermediaire(liste,delta):
         for i in range(len(bite_default)) :
-            if ((bite_default[i]+delta)-liste[i]!=0):
+            if ((bite_default[i])-(liste[i]+delta)!=0):
                 return False
         return True
 
     delta=bite_default[0]-liste[0]
-    print(f"delta={delta}")
+    # print(f"delta={delta}")
     return verif_intermediaire(liste,delta)
     
-test=bite_default+2
-print(verification_dentaire(test))
+# Testing
+# test=bite_default-8
+# print(verification_dentaire(test))
+# print(list_relevé[0])
+
+solution=0
+for element in list_relevé:
+    # print(type(element[1]))
+    if (verification_dentaire(element[1])):
+        solution+=int(element[0])
+print(solution)
+
