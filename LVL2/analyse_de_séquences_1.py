@@ -92,3 +92,19 @@ for letter in data_raw:
     combinaison*=dict_symbole[letter][0]
 result=combinaison%100000
 print(result)
+
+
+
+# # Bonus : 
+# score = {c: 1 for c in 'ACGU'}
+# score |= {c: 2 for c in 'RYKMSW'}
+# score |= {c: 3 for c in 'BDHV'}
+# score['N'] = 4
+
+# print(score)
+
+# score = {}
+# for value, word in zip(range(1,5), ('ACGU', 'RYKMSW', 'BDHV', 'N')):
+#     print(f'Adding letters of {word} with value {value}')
+#     score |= {c: value for c in word}
+# print(score)
